@@ -9,6 +9,7 @@ import { db} from '../firebase';
 
 
 function SidebarOption({Icon, title, addChannelOption, id}) {
+  console.log(id)
     const dispatch = useDispatch();
 
     const addChannel = () => {
@@ -37,7 +38,7 @@ function SidebarOption({Icon, title, addChannelOption, id}) {
     <SidebarOptionContainer 
      onClick={addChannelOption ? addChannel : selectChannel}
      >
-        {Icon && <Icon fontSize="small" style={{padding:0}}/>}
+        {Icon && <Icon fontSize="small" style={{padding:10}}/>}
        {Icon ? (
        <h3>{title}</h3>
        ): (
@@ -56,8 +57,7 @@ const SidebarOptionContainer = styled.div`
   display: flex;
   font-size: 12px;
   align-items: center;
-  padding-left: 10px;
-  margin-top: 20px;
+  padding-left: 2px;
   cursor: pointer;
  
 
@@ -67,11 +67,11 @@ const SidebarOptionContainer = styled.div`
   }
   > h3 {
     font-weight:500;
-    padding-left:15px;
+    
 
   }
   > h3 > span {
-    padding:15px;
+    padding-left:15px;
   }
 
 
@@ -79,7 +79,7 @@ const SidebarOptionContainer = styled.div`
 `;
 
 const SidebarOptionChannel = styled.h3`
- padding: 10px;
+ 
  font-weight:300;
  
  
